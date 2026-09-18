@@ -48,7 +48,7 @@ ColumnLayout {
     }
     Text {
         Layout.fillWidth: true
-        text: "Git metadata (.git) and Easy Backup’s cache are always excluded."
+        text: "Git metadata (.git) is always excluded."
         color: Qt.alpha(Color.popups.text, 0.72)
         font.family: Style.font.family
         font.pixelSize: Style.font.body

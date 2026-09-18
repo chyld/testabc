@@ -19,7 +19,7 @@ CONFIG = Path(os.environ.get('XDG_CONFIG_HOME', str(Path.home() / '.config'))) /
 CACHE = Path(os.environ.get('XDG_CACHE_HOME', str(Path.home() / '.cache'))) / 'omarchy/easy-backup'
 MAX_TOTAL = 250 * 1024 * 1024
 MAX_FILES = 10000
-DEFAULT_EXCLUDES = ['.git', '.cache', '__pycache__', 'node_modules', '.ssh', '.gnupg', '.env', '.env.*', '*.pem', '*.key']
+DEFAULT_EXCLUDES = ['.cache', '__pycache__', 'node_modules', '.ssh', '.gnupg', '.env', '.env.*', '*.pem', '*.key']
 
 
 def atomic(path, data):
@@ -51,6 +51,7 @@ def validate(data):
             raise ValueError('Invalid ' + key)
     if any(not Path(p).is_absolute() for p in data['paths']):
         raise ValueError('Choose absolute source paths.')
+    data['excludes'] = [pattern for pattern in data['excludes'] if pattern != '.git']
     return data
 
 
