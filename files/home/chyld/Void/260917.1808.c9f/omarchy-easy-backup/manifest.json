@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "chyld.easy-backup",
+  "name": "Easy Backup",
+  "version": "0.1.0",
+  "author": "Chyld Medford",
+  "description": "Back up files and folders from across your filesystem to a GitHub repository with one click.",
+  "kinds": ["service", "bar-widget"],
+  "entryPoints": {"barWidget": "BarWidget.qml", "service": "Service.qml"},
+  "barWidget": {"displayName": "Easy Backup", "category": "Utilities", "allowMultiple": false, "defaultSection": "left", "defaults": {}, "description": "Choose files and folders, review changes, and back up to GitHub."},
+  "license": "MIT"
+}
